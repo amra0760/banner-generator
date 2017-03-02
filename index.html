@@ -7,20 +7,46 @@
     <script>
     $(function(){
       
-      var color = $('#color').html(); 
-      console.log(color);
+      $('button').click(function() {
+        //Title
+        $('h1').html("CERTIFCATE OF ACHIEVEMENT!!!!");
+        
+        //Name
+        var name = $('#name').val();
+        console.log(name);
+        $('#name2').html("CONGRADULATIONS TO " + name.toUpperCase());
+        
+        //Accomplishment
+        var accomplishment = $('#accomplishment').val();
+        console.log(accomplishment);
+        $('#accomplishment2').html("FOR " + accomplishment.toUpperCase());
+        
+        
+        //Certificate Color
+        var color = $('#color').val()
+        console.log(color);
+        $('div').val(color).css('background-color', color);
+        
+        //Border Color
+        var borderColor = $('#borderColor').val()
+        console.log(borderColor);
+        $('div').val(borderColor).css('border', "10px", borderColor);
+        
+      });
     });
+    
     </script>
   </head>
   <body>
   Name: <input id="name"><br>
-  What was your accomplishment?: <input id="accomplishment"><br>
-  Certificate Color: <input id="color"><br>
-  <!--Certificate Border Color: <input id="border"><br>-->
+  What was your accomplishment?:(Please make it an action/verb) <input id="accomplishment"><br>
+  Certificate Color: <input type="color" id="color"><br>
+  Certificate Border Color: <input type="color" id="borderColor"><br>
   <button>Generate My Certificate!</button>
   <div>
-    <h1>Congradulations</h1>
-    
+    <h1></h1>
+    <h2 id = "name2"></h2>
+    <h2 id = "accomplishment2"></h2>
   </div>
   </body>
 </html>

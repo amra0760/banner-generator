@@ -9,17 +9,17 @@
       
       $('button').click(function() {
         //Title
-        $('h1').html("CERTIFCATE OF ACHIEVEMENT!!!!");
+        $('h1').html("CERTIFCATE OF ACHIEVEMENT!!!!").css("text-align", "center");
         
         //Name
         var name = $('#name').val();
-        console.log(name);
-        $('#name2').html("CONGRADULATIONS TO " + name.toUpperCase());
+        console.log(name)
+        $('#name2').html("CONGRATULATIONS TO " + name.toUpperCase()).css("text-align", "center");
         
         //Accomplishment
         var accomplishment = $('#accomplishment').val();
         console.log(accomplishment);
-        $('#accomplishment2').html("FOR " + accomplishment.toUpperCase());
+        $('#accomplishment2').html("FOR " + accomplishment.toUpperCase() + "!!!!!!").css("text-align", "center");
         
         
         //Certificate Color
@@ -30,23 +30,54 @@
         //Border Color
         var borderColor = $('#borderColor').val()
         console.log(borderColor);
-        $('div').val(borderColor).css('border', "10px", borderColor);
+        $('div').css('border-color', borderColor );
         
+        //Certificate Height
+        var cHeight = $('#cHeight').val()
+        console.log(cHeight);
+        $('div').val(cHeight).css('height', cHeight);
+        
+        //Certificate Width
+        var cWidth = $('#cWidth').val()
+        console.log(cWidth);
+        $('div').val(cWidth).css('width', cWidth);
+        
+        
+        if($('#bCheck').is(":checked")) {
+         var bWidth = $('#bWidth').val()
+        console.log(bWidth);
+        $('div').val(bWidth).css('border-width', bWidth);
+        } 
+        else {
+	      $('div').css('border', '0px solid white')
+        }
+
       });
     });
     
     </script>
+    <style>
+      #Certificate {
+        width: 0px;
+        height: 0px;
+        border: 0px solid white;
+      }
+    </style>
   </head>
   <body>
   Name: <input id="name"><br>
   What was your accomplishment?:(Please make it an action/verb) <input id="accomplishment"><br>
   Certificate Color: <input type="color" id="color"><br>
+  Width of Certificate: (for good results start with 400) <input type="number" id="cWidth"> <br>
+  Height of Certificate: (for good results start with 250)<input type="number" id="cHeight"> <br>
+  Do you want a border?(Check box if Yes) <input type="checkbox" id="bCheck"><br>
   Certificate Border Color: <input type="color" id="borderColor"><br>
-  <button>Generate My Certificate!</button>
-  <div>
+  Border Width: (Must be atleast 1 to be visible) <input type="number" id="bWidth"> <button>Generate My Certificate!</button>
+  <div id = "Certificate">
     <h1></h1>
     <h2 id = "name2"></h2>
     <h2 id = "accomplishment2"></h2>
   </div>
   </body>
 </html>
+
